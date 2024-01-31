@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdbool.h>
+bool isS(char *input);
+bool isS(char *input) {
+    if (input[0] == '0' && isS(input + 1) && input[1] == '1') {
+        return true;
+    } else if (input[0] == '\0') {
+        return true;
+    }
+    return false;
+}
+
+int main() {
+    char input[100];
+    printf("Enter a string: ");
+    scanf("%s", input);
+    if (isS(input)) {
+        printf("Accepted\n");
+    } else {
+        printf("Not Accepted\n");
+    }
+
+    return 0;
+}
